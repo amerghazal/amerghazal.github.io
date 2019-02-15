@@ -7,3 +7,7 @@
 [submodule "themes/whiteplain"]
 	path = themes/whiteplain
 	url = https://github.com/taikii/whiteplain.git
+[submodule "public"]
+	path = public
+	url = git@github.com:amerghazal/amerghazal.github.io.git
+	branch = master
