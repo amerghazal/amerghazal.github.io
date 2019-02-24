@@ -6,9 +6,56 @@
     <description>Recent content in Tags on amerghazal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2019 amer ghazal</copyright>
+    <lastBuildDate>Sun, 24 Feb 2019 00:13:33 -0600</lastBuildDate>
     
 	<atom:link href="https://amerghazal.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Auth</title>
+      <link>https://amerghazal.github.io/tags/auth/</link>
+      <pubDate>Sun, 24 Feb 2019 00:13:33 -0600</pubDate>
+      
+      <guid>https://amerghazal.github.io/tags/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Certificates</title>
+      <link>https://amerghazal.github.io/tags/certificates/</link>
+      <pubDate>Sun, 24 Feb 2019 00:13:33 -0600</pubDate>
+      
+      <guid>https://amerghazal.github.io/tags/certificates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>General</title>
+      <link>https://amerghazal.github.io/tags/general/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:04 -0600</pubDate>
+      
+      <guid>https://amerghazal.github.io/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://amerghazal.github.io/tags/golang/</link>
+      <pubDate>Sun, 24 Feb 2019 00:13:33 -0600</pubDate>
+      
+      <guid>https://amerghazal.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssl</title>
+      <link>https://amerghazal.github.io/tags/ssl/</link>
+      <pubDate>Sun, 24 Feb 2019 00:13:33 -0600</pubDate>
+      
+      <guid>https://amerghazal.github.io/tags/ssl/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

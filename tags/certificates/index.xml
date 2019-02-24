@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>amerghazal</title>
-    <link>https://amerghazal.github.io/</link>
-    <description>Recent content on amerghazal</description>
+    <title>Certificates on amerghazal</title>
+    <link>https://amerghazal.github.io/tags/certificates/</link>
+    <description>Recent content in Certificates on amerghazal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2019 amer ghazal</copyright>
     <lastBuildDate>Sun, 24 Feb 2019 00:13:33 -0600</lastBuildDate>
     
-	<atom:link href="https://amerghazal.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://amerghazal.github.io/tags/certificates/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       
       <guid>https://amerghazal.github.io/notes/client-side-auth-gist/</guid>
       <description>&lt;p&gt;Assuming you have client/server certificates already provisioned, this gist walks you through setting up a client-cert auth enforcing server with gin/gonic.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Intro</title>
-      <link>https://amerghazal.github.io/notes/intro/</link>
-      <pubDate>Sun, 24 Feb 2019 00:00:04 -0600</pubDate>
-      
-      <guid>https://amerghazal.github.io/notes/intro/</guid>
-      <description>I&amp;rsquo;m hoping to use this space to organize and collect some thoughts I have on a variety of topics:
- systems history coding philosophy complexity  these are largely interwoven, too</description>
     </item>
     
   </channel>

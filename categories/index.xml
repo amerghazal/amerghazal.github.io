@@ -6,9 +6,28 @@
     <description>Recent content in Categories on amerghazal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2019 amer ghazal</copyright>
     
 	<atom:link href="https://amerghazal.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Code</title>
+      <link>https://amerghazal.github.io/categories/code/</link>
+      <pubDate>Sun, 24 Feb 2019 00:13:33 -0600</pubDate>
+      
+      <guid>https://amerghazal.github.io/categories/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Examples</title>
+      <link>https://amerghazal.github.io/categories/examples/</link>
+      <pubDate>Sun, 24 Feb 2019 00:13:33 -0600</pubDate>
+      
+      <guid>https://amerghazal.github.io/categories/examples/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

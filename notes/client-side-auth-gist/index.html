@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Client Side Auth Gist - amerghazal</title>
+  <meta property="og:title" content="Client Side Auth Gist - amerghazal" />
+  <meta name="twitter:title" content="Client Side Auth Gist - amerghazal" />
+  <meta name="description" content="Assuming you have client/server certificates already provisioned, this gist walks you through setting up a client-cert auth enforcing server with gin/gonic.">
+  <meta property="og:description" content="Assuming you have client/server certificates already provisioned, this gist walks you through setting up a client-cert auth enforcing server with gin/gonic.">
+  <meta name="twitter:description" content="Assuming you have client/server certificates already provisioned, this gist walks you through setting up a client-cert auth enforcing server with gin/gonic.">
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="amerghazal" />
+  <meta property="og:url" content="https://amerghazal.github.io/notes/client-side-auth-gist/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script defer src="/js/fontawesome.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">amerghazal</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-categories"><a href="/categories/" title="Categories">Categories</a></li>
+      <li class="site-navi-item-tags"><a href="/tags/" title="Tags">Tags</a></li>
+      <li class="site-navi-item-series"><a href="/series/" title="Series">Series</a></li>
+      <li class="site-navi-item-archives"><a href="/archives/" title="Archives">Archives</a></li>
+      <li class="site-navi-item-about"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">Client Side Auth Gist</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>February 24, 2019</time></li>
+        <li class="article-meta-categories">
+          <a href="/categories/code/">
+            <i class="fas fa-folder"></i>
+            code
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-categories">
+          <a href="/categories/examples/">
+            <i class="fas fa-folder"></i>
+            examples
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/golang/">
+            <i class="fas fa-tag"></i>
+            golang
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/ssl/">
+            <i class="fas fa-tag"></i>
+            ssl
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/certificates/">
+            <i class="fas fa-tag"></i>
+            certificates
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/auth/">
+            <i class="fas fa-tag"></i>
+            auth
+          </a>&nbsp;
+        </li>
+      </ul>
+      
+      <p>Assuming you have client/server certificates already provisioned, this gist walks you through setting up a client-cert auth enforcing server with gin/gonic.</p>
+
+<p>If you&rsquo;re unfamiliar with this auth flow, here&rsquo;s what it generally looks like:</p>
+
+<p><img src="/images/clientcertauth.png" alt="cliencert auth flow" /></p>
+
+<p>Run Server</p>
+
+<pre><code>% go run server.go &amp;
+[2] 72578
+</code></pre>
+
+<p>without client cert</p>
+
+<pre><code>% curl -k https://localhost:8080/ping
+2018/12/15 23:52:54 http: TLS handshake error from [::1]:62141: tls: client didn't provide a certificate
+curl: (35) error:14094412:SSL routines:SSL3_READ_BYTES:sslv3 alert bad certificate
+</code></pre>
+
+<p>with client cert</p>
+
+<pre><code>% curl -v -k \
+--cacert certs/ca.pem \
+--key certs/client.key \
+--cert certs/client.pem \
+https://localhost:8080/ping
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8080 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: certs/ca.pem
+  CApath: none
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+* TLSv1.2 (OUT), TLS change cipher, Client hello (1):
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+* TLSv1.2 (IN), TLS change cipher, Client hello (1):
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+...
+...
+&gt; GET /ping HTTP/2
+&gt; Host: localhost:8080
+&gt; User-Agent: curl/7.54.0
+&gt; Accept: */*
+&gt;
+* Connection state changed (MAX_CONCURRENT_STREAMS updated)!
+[GIN] 2018/12/15 - 23:49:56 | 200 |      67.769µs |             ::1 | GET      /ping
+&lt; HTTP/2 200
+&lt; content-type: application/json; charset=utf-8
+&lt; content-length: 18
+&lt; date: Sun, 16 Dec 2018 05:49:56 GMT
+&lt;
+* Connection #0 to host localhost left intact
+{&quot;message&quot;:&quot;pong&quot;}
+
+</code></pre>
+
+<p>server.go</p>
+
+<pre><code>package main
+
+import (
+    &quot;crypto/tls&quot;
+    &quot;crypto/x509&quot;
+    &quot;github.com/gin-gonic/gin&quot;
+    &quot;io/ioutil&quot;
+    &quot;log&quot;
+    &quot;net/http&quot;
+)
+
+func main() {
+    cert, _ := tls.LoadX509KeyPair(&quot;certs/server.pem&quot;, &quot;certs/server.key&quot;)
+    certpool := x509.NewCertPool()
+    capem, _ := ioutil.ReadFile(&quot;certs/ca.pem&quot;)
+    if !certpool.AppendCertsFromPEM(capem) {
+        log.Fatalf(&quot;Can't parse client certificate authority&quot;)
+    }
+    tlsConfig := tls.Config{
+        Certificates: []tls.Certificate{cert},
+        ClientAuth:   tls.RequireAndVerifyClientCert,
+        ClientCAs:    certpool,
+    }
+    r := gin.Default()
+    r.GET(&quot;/ping&quot;, func(c *gin.Context) {
+        c.JSON(200, gin.H{
+            &quot;message&quot;: &quot;pong&quot;,
+        })
+    })
+    server := http.Server{
+        Addr:      &quot;:8080&quot;,
+        Handler:   r,
+        TLSConfig: &amp;tlsConfig,
+    }
+    _ = server.ListenAndServeTLS(&quot;&quot;, &quot;&quot;)
+}
+
+</code></pre>
+    </article>
+
+    
+<ul class="article-share">
+  <li>
+    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </li>
+  <li>
+    <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+    <script>!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+  </li>
+</ul>
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer pager-noitem">&lt; Newer</li>
+      <li class="pager-older">
+        <a href="/notes/intro/" data-toggle="tooltip" data-placement="top" title="Intro">Older &gt;</a>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright">&copy; Copyright 2019 amer ghazal</div>
+  <ul class="site-footer-items">
+    <li class="site-footer-item-about"><a href="/about/" title="About">About</a></li>
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+
+
+</body>
+</html>
