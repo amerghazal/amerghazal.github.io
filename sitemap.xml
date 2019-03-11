@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://amerghazal.github.io/notes/introducing-heuristics-and-rules-of-thumb/</loc>
+    <lastmod>2019-03-11T00:42:24-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://amerghazal.github.io/notes/client-side-auth-gist/</loc>
     <lastmod>2019-02-24T00:13:33-06:00</lastmod>
   </url>
@@ -18,7 +23,7 @@
   
   <url>
     <loc>https://amerghazal.github.io/notes/</loc>
-    <lastmod>2019-02-24T00:13:33-06:00</lastmod>
+    <lastmod>2019-03-11T00:42:24-06:00</lastmod>
   </url>
   
   <url>
@@ -63,7 +68,14 @@
   </url>
   
   <url>
+    <loc>https://amerghazal.github.io/series/heuristics-laws-smells/</loc>
+    <lastmod>2019-03-11T00:42:24-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://amerghazal.github.io/series/</loc>
+    <lastmod>2019-03-11T00:42:24-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -81,7 +93,7 @@
   
   <url>
     <loc>https://amerghazal.github.io/</loc>
-    <lastmod>2019-02-24T00:13:33-06:00</lastmod>
+    <lastmod>2019-03-11T00:42:24-06:00</lastmod>
     <priority>0</priority>
   </url>
   
