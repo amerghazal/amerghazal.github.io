@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Introducing Heuristics, Laws, and Smells with Nietzsche - amerghazal</title>
+  <meta property="og:title" content="Introducing Heuristics, Laws, and Smells with Nietzsche - amerghazal" />
+  <meta name="twitter:title" content="Introducing Heuristics, Laws, and Smells with Nietzsche - amerghazal" />
+  <meta name="description" content="I&rsquo;m eager to use this place to collect and critique some heuristics, laws, and smells that have become valuable to me, recently. These heuristics help in many ways, not least of which developing and designing software and systems. What makes them so useful is that they more often than not make a conclusion or at least a direction towards a conclusion almost immediately available. There&rsquo;s danger in that, of course, but there&rsquo;s also a good deal of danger in the trek of drawn-out analysis.">
+  <meta property="og:description" content="I&rsquo;m eager to use this place to collect and critique some heuristics, laws, and smells that have become valuable to me, recently. These heuristics help in many ways, not least of which developing and designing software and systems. What makes them so useful is that they more often than not make a conclusion or at least a direction towards a conclusion almost immediately available. There&rsquo;s danger in that, of course, but there&rsquo;s also a good deal of danger in the trek of drawn-out analysis.">
+  <meta name="twitter:description" content="I&rsquo;m eager to use this place to collect and critique some heuristics, laws, and smells that have become valuable to me, recently. These heuristics help in many ways, not least of which developing …">
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="amerghazal" />
+  <meta property="og:url" content="https://amerghazal.github.io/notes/introducing-heuristics-and-rules-of-thumb/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script defer src="/js/fontawesome.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">amerghazal</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-categories"><a href="/categories/" title="Categories">Categories</a></li>
+      <li class="site-navi-item-tags"><a href="/tags/" title="Tags">Tags</a></li>
+      <li class="site-navi-item-series"><a href="/series/" title="Series">Series</a></li>
+      <li class="site-navi-item-archives"><a href="/archives/" title="Archives">Archives</a></li>
+      <li class="site-navi-item-about"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      <p class="article-title-series"><a href="/series/heuristics-laws-smells/">heuristics, laws, smells</a>&nbsp;/</p>
+      <h1 class="article-title">Introducing Heuristics, Laws, and Smells with Nietzsche</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>February 25, 2019</time></li>
+      </ul>
+      
+<aside class="toc">
+  
+</aside>
+      <p>I&rsquo;m eager to use this place to collect and critique some heuristics, laws, and smells that have become valuable to me, recently. These heuristics help in many ways, not least of which developing and designing software and systems. What makes them so useful is that they more often than not make a conclusion or at least a direction towards a conclusion almost immediately available. There&rsquo;s danger in that, of course, but there&rsquo;s also a good deal of danger in the trek of drawn-out analysis. There&rsquo;s also a ton of benefit.</p>
+
+<p>Both utility and danger are expressed succinctly by a favorite thinker, Nietzsche. From <em>Thus Spoke Zarathustra</em>, he explains his thoughts on aphorisms:</p>
+
+<blockquote>
+<p>In the mountains, the shortest route is from peak to peak, but for that you must have long legs. Aphorisms should be peaks, and those to whom they are spoken should be big and full of stature.</p>
+
+<p>The air thin and pure, danger near, and the spirit full of a joyful wickedness: these things suite one another.</p>
+</blockquote>
+
+<p>I don&rsquo;t have a deep interpretation of this nor application of it to laws in software, but here are some immediate thoughts:</p>
+
+<ol>
+<li><p>Traversing mountains is difficult and tedious. Aphorisms, heuristics/laws, are peaks through which you can traverse great distances fairly quickly. The problem is that you need long legs to leap between peaks sufficiently.</p></li>
+
+<li><p>I comfortably understand long legs here to mean intellectual and experiential fitness and agility. This fitness is needed in order to circumvent the drudgery of walking down a mountain only to walk up another one - the only other way to get from peak to peak. Supporting this is Nietzsche&rsquo;s view in <em>Beyond Good and Evil</em> of esoterics as <em>looking down on others from above</em>.</p></li>
+
+<li><p>Finally, there&rsquo;s danger. Not taking the usual step-by-step path of analysis to reach a conclusion with some measure of confidence? Joyful wickedness. The atmosphere of peaks is not meant for an extended stay as there isn&rsquo;t much more reasoning one can do with just heuristics and laws. This is similar to the conflict between virtue ethics and the enlightenment tendency to overrationalize. In fact, there&rsquo;s a lot of overlap between virtue ethics and the use of heuristics and laws for reaching quick conclusions when dealing with software: i. there&rsquo;s always opposition and ii. you don&rsquo;t overrationalize.</p></li>
+
+<li><p>One more note regarding danger - I&rsquo;m convinced that the use of heuristics and laws <strong>needs</strong> to be coupled with some experience of smells. We&rsquo;ll define smells as characteristics or traces of an antipattern in something. There can be code smells, corporate smells, design smells, contract smells, etc. - wherever there can be (anti-)patterns, there can be smells. Being able to leap from peak to peak requires one to be experienced with detecting some of the dangers that can arise. Using heuristics and laws to make decisions can be efficient, but like any other decisioning strategy, it can lead to and justify antipatterns. After all, these heuristics and laws use as their supporting evidence consistent, sometimes unwavering patterns over extended periods of time. (I suspect there&rsquo;s a more intimate relationship between some patterns that heuristics and laws propose and some antipatterns, much like there&rsquo;s a dance of moderation between virtues and their extremes - vices.)</p></li>
+
+<li><p>One more final note regarding danger. There&rsquo;s a trend in recent self-help non-fiction to &ldquo;optimize&rdquo; one&rsquo;s self through life hacks and pro tips. This is certainly not the intention here. Heuristics, laws, and smells have their place (read: ideal use cases) and don&rsquo;t obviate the need for thinking through a problem.</p></li>
+</ol>
+
+<p><strong>TL;DR</strong> - Heuristics and laws can be really useful when building software to avoid getting lost in analysis. Their use needs to be coupled with an awareness of dangers (knowledge of smells).</p>
+
+    </article>
+    <section class="article-series">
+      <h2 class="series-title"><a href="/series/heuristics-laws-smells/"><i class="fas fa-book"></i>&nbsp;heuristics, laws, smells</a></h2>
+      <ol reversed="reversed" class="series">
+      </ol>
+    </section>
+
+    
+<ul class="article-share">
+  <li>
+    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </li>
+  <li>
+    <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+    <script>!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+  </li>
+</ul>
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer pager-noitem">&lt; Newer</li>
+      <li class="pager-older">
+        <a href="/notes/client-side-auth-gist/" data-toggle="tooltip" data-placement="top" title="Client Side Auth Gist">Older &gt;</a>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright">&copy; Copyright 2019 amer ghazal</div>
+  <ul class="site-footer-items">
+    <li class="site-footer-item-about"><a href="/about/" title="About">About</a></li>
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+
+
+</body>
+</html>
